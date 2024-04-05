@@ -9,11 +9,11 @@ import os
 import spacy 
 nlp = spacy.load('en_core_web_sm') #assigns specific token vectors
 
-import urllib as req 
+import urllib.request
 
 #request url for canadian law
-resp = req.urlopen("https://www.canada.ca/en/health-canada/corporate/about-health-canada/legislation-guidelines/acts-regulations/list-acts-regulations.html") #this is the response object
+with urllib.request.urlopen("https://www.canada.ca/en/health-canada/corporate/about-health-canada/legislation-guidelines/acts-regulations/list-acts-regulations.html") as url: #this is the response object
 
-#read the webpage
-canadian_law = resp.read()
-print(canadian_law)
+    canLaw = url.read()
+
+print(canLaw)
