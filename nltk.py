@@ -37,9 +37,14 @@ import pprint
 pprint.pprint(token_with_re[:600])
 
 #use beautiful soup
-from bs4 import BeautifulSoup
-from pprint import pprint
+#import nltk
+#from bs4 import BeautifulSoup
+#from pprint import pprint
 #create beautiful soup object
 get_soup = BeautifulSoup(canLaw, 'html.parser')
 #get text from soup
 extract_text = get_soup.get_text()
+# split data
+split_data = [token for token in extract_text.split()]
+#pprint 
+pprint.pprint(split_data)
