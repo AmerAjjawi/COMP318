@@ -36,10 +36,10 @@ print(token_with_re[:600])
 import pprint
 pprint.pprint(token_with_re[:600])
 
-#fix add remove of alphanumerical
-#clean_text = [re.sub(r'[^0-9a-zA-Z\s]+', '', token_with_re).lower() for token in token_with_re if token.strip() != " "]
-
- #Creating beautiful soup object
-get_soup = BeautifulSoup(token_with_re)
- #grapping the text out soup
+#use beautiful soup
+from bs4 import BeautifulSoup
+from pprint import pprint
+#create beautiful soup object
+get_soup = BeautifulSoup(canLaw, 'html.parser')
+#get text from soup
 extract_text = get_soup.get_text()
