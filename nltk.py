@@ -48,3 +48,9 @@ extract_text = get_soup.get_text()
 split_data = [token for token in extract_text.split()]
 #pprint 
 pprint.pprint(split_data)
+
+#display length of data
+print(len(split_data))
+
+#displaying range from 400 to 2299
+pprint.pprint(split_data[400:2300])
