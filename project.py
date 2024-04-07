@@ -37,8 +37,8 @@ token_with_re = re.split(r'\W+', canLaw)
 print("len(token_with_re)")
 print(len(token_with_re))
 print("up to 600 tokens from token_with_re")
-print(token_with_re[:600])
-pprint.pprint(token_with_re[:600])
+print(token_with_re[:100])
+pprint.pprint(token_with_re[:100])
 
 # use beautiful soup
 # import nltk
@@ -57,7 +57,7 @@ pprint.pprint(split_data)
 print(len(split_data))
 
 # displaying range from 400 to 2299
-pprint.pprint(split_data[400:2300])
+pprint.pprint(split_data[:100])
 
 
 # polish text
@@ -77,7 +77,7 @@ print(individual_sentences)
 print(len(individual_sentences))
 
 # print the sentences from index 10 to 20
-print(individual_sentences[10:20])
+print(individual_sentences[:20])
 
 # try to use textblob to give the score of polarity -> either postive or negative and subjectivity between 0 & 1
 TextBlob_sentences = []
@@ -111,11 +111,27 @@ plt.show()
 #set up array
 #pattern = []
 #loop through the individual_sentence
-pattern = []
-for s in individual_sentences:
-    res = sentiment(s)
-    c = res[0]
-    d = res[1]
-    pattern.append([s,c,d])
 
-pprint.pprint(pattern[1])
+#loop through
+#give a sentiment score
+#from pattern import sentiment, polarity, subjectivity, positive
+#pattern_list = []
+#for s in individual_sentences:
+ #   res = sentiment(s)
+  #  c = res[0]
+   # d = res[1]
+    #pattern_list.append([s,c,d])
+
+#pprint.pprint(pattern_list)
+#import nltk
+#nltk.downloader.download('vader_lexicon')
+#from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+#vad_object = SentimentIntensityAnalyzer()
+#print(vad_object.polarity_scores(TextBlob_sentences))
+
+#using vader to analyze the legislation article
+import nltk
+nltk.download('vader_lexicon')
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+vad_object = SentimentIntensityAnalyzer()
+print(vad_object.polarity_scores(canLaw))
