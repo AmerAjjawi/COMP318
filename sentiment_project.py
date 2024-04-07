@@ -95,3 +95,7 @@ df_sentiment = pd.DataFrame(data=TextBlob_sentences, columns = ['individual_sent
 
 df_sentiment.head()
 df_sentiment.info()
+
+#data has 58 sentences and their polarity and subjectivity scores
+#use seaborn plot to visualize one single attribute and two attributes
+
