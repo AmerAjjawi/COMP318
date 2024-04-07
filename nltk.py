@@ -8,7 +8,7 @@ from wordcloud import wordcloud
 import os
 import spacy 
 nlp = spacy.load('en_core_web_sm') #assigns specific token vectors
-from textblob import TextBlob
+
 
 import urllib.request
 
@@ -55,3 +55,15 @@ print(len(split_data))
 
 #displaying range from 400 to 2299
 pprint.pprint(split_data[400:2300])
+
+
+#polish text 
+#shows the full html - maybe delete
+polish_text = canLaw.replace("n", " ")
+polish_text = polish_text.replace("/", " ")
+polish_text = ''.join(c for c in polish_text if c != " ")
+pprint.pprint(polish_text)
+
+
+
+
