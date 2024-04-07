@@ -8,6 +8,7 @@ from wordcloud import wordcloud
 import os
 import spacy 
 nlp = spacy.load('en_core_web_sm') #assigns specific token vectors
+from textblob import TextBlob
 
 import urllib.request
 
@@ -40,7 +41,7 @@ pprint.pprint(token_with_re[:600])
 #import nltk
 #from bs4 import BeautifulSoup
 #from pprint import pprint
-#create beautiful soup object
+#create beautiful soup object and parsing the data
 get_soup = BeautifulSoup(canLaw, 'html.parser')
 #get text from soup
 extract_text = get_soup.get_text()
