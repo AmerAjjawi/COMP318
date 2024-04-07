@@ -88,4 +88,10 @@ for s in individual_sentences:
     b = text.sentiment.subjectivity
     TextBlob_sentences.append([s,a,b])
 
-#transform the data into from an empty list
+#transform the data from list to a table using pandas
+
+import pandas as pd    
+df_sentiment = pd.DataFrame(data=TextBlob_sentences, columns = ['individual_sentences', 'Polarity', 'Subjectivity'])
+
+df_sentiment.head()
+df_sentiment.info()
