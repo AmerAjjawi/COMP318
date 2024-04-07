@@ -68,8 +68,24 @@ polish_text = ''.join(c for c in polish_text if c != " ")
 pprint.pprint(polish_text)
 
 
-#split the texts
-html_sentence = []
+#split the texts in individual sentences
+individual_sentences = []
+tokens = nlp(polish_text)
+for sent in tokens.sents:
+    individual_sentences.append((sent.text.strip()))
+print(individual_sentences)
+print(len(individual_sentences))
 
+#print the sentences from index 10 to 20
+print(individual_sentences[10:20])
 
+#try to use textblob to give the score of polarity -> either postive or negative and subjectivity between 0 & 1
+from textblob import TextBlob
+TextBlob_sentences = []
+for s in individual_sentences:
+    text = TextBlob(s)
+    a = text.sentiment.polarity
+    b = text.sentiment.subjectivity
+    TextBlob_sentences.append([s,a,b])
 
+#transform the data into from an empty list
