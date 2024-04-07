@@ -1,15 +1,18 @@
 #import libaries
-import nltk
+import sentiment_project
 import pandas as pd
 import seaborn as sn 
 from bs4 import BeautifulSoup 
+import matplotlib.pyplot as plt
+import numpy as np
 import random
 from wordcloud import wordcloud
 import os
 import spacy 
 nlp = spacy.load('en_core_web_sm') #assigns specific token vectors
-
-
+#from textblob import TextBlob
+from nltk.corpus import wordnet as wn
+from pattern.text.en import wordnet
 import urllib.request
 
 #request url for canadian law
@@ -58,12 +61,15 @@ pprint.pprint(split_data[400:2300])
 
 
 #polish text 
-#shows the full html - maybe delete
+#shows the full html - maybe delete later
 polish_text = canLaw.replace("n", " ")
 polish_text = polish_text.replace("/", " ")
 polish_text = ''.join(c for c in polish_text if c != " ")
 pprint.pprint(polish_text)
 
+
+#split the texts
+html_sentence = []
 
 
 
