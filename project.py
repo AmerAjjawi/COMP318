@@ -5,7 +5,7 @@ import re
 import urllib.request
 from pattern.text.en import wordnet
 from nltk.corpus import wordnet as wn
-import sentiment_project
+import project
 import pandas as pd
 import seaborn as sn
 from bs4 import BeautifulSoup
@@ -16,7 +16,7 @@ from wordcloud import wordcloud
 import os
 import spacy
 nlp = spacy.load('en_core_web_sm')  # assigns specific token vectors
-# from textblob import TextBlob
+
 
 # request url for canadian law
 with urllib.request.urlopen("https://www.canada.ca/en/health-canada/corporate/about-health-canada/legislation-guidelines/acts-regulations/list-acts-regulations.html") as url:  # this is the response object
@@ -105,3 +105,17 @@ plt.show()
 sn.displot(df_sentiment["Subjectivity"], height=5, aspect=1.8)
 plt.xlabel("Displaying the subjectivity in textblob")
 plt.show()
+
+
+#use sentiment analysis with pattern
+#set up array
+#pattern = []
+#loop through the individual_sentence
+pattern = []
+for s in individual_sentences:
+    res = sentiment(s)
+    c = res[0]
+    d = res[1]
+    pattern.append([s,c,d])
+
+pprint.pprint(pattern[1])
