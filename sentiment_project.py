@@ -97,5 +97,8 @@ df_sentiment.head()
 df_sentiment.info()
 
 #data has 58 sentences and their polarity and subjectivity scores
-#use seaborn plot to visualize one single attribute and two attributes
-
+#seaborn uses Matplotlib to visualize distributions
+#display the polarity & subjectivity from the textblob
+sn.displot(df_sentiment["Polarity"], height=5, aspect=1.8,)
+plt.xlabel('Displaying the polarity in textblob')
+plt.show()
