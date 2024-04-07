@@ -134,4 +134,4 @@ import nltk
 nltk.download('vader_lexicon')
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 vad_object = SentimentIntensityAnalyzer()
-print(vad_object.polarity_scores(TextBlob_sentences[:20]))
+print(vad_object.polarity_scores(canLaw[:10]))
