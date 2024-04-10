@@ -134,4 +134,30 @@ import nltk
 nltk.download('vader_lexicon')
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 vad_object = SentimentIntensityAnalyzer()
-print(vad_object.polarity_scores(canLaw[:10]))
+print(vad_object.polarity_scores(canLaw[:50]))
+
+
+tokenizer = nltk.tokenize.RegexpTokenizer('w+')
+print(len(individual_sentences))
+
+mylist = []
+print(individual_sentences[0:20])
+
+pprint.pprint(individual_sentences[0:15])
+
+import nltk
+#common phrases module
+nltk.download('punkt')
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+
+stop_words = set(stopwords.words('english'))
+filtered_sentence = [w for w in individual_sentences if not w.lower() in stop_words]
+filtered_sentence = []
+ 
+for w in individual_sentences:
+    if w not in stop_words:
+        filtered_sentence.append(w)
+
+print(individual_sentences)
+print(filtered_sentence)
